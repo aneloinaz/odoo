@@ -1,0 +1,40 @@
+<odoo>
+    <record id="view_partner_form_game_players" model="ir.ui.view">
+        <field name="name">res.partner.form.game.players</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//notebook" position="inside">
+                <page string="Game Players">
+
+                    <group>
+                        <group>
+                            <field name="nickname"/>
+                            <field name="puntos_acumulados"/>
+                        </group>
+
+                        <!--<group>
+                            <field name="avatar"
+                                   widget="image"
+                                   class="oe_avatar"/>
+                        </group>-->
+                    </group>
+
+                    <group>
+                        <field name="progreso_nivel"
+                               widget="progressbar"
+                               options="{'max_value': 100}"/>
+                    </group>
+
+                    <group>
+                        <field name="logros_desbloqueados"
+                               placeholder="Ej: Nivel 1 superado, 500 puntos..."/>
+                    </group>
+
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

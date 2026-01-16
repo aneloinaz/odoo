@@ -1,0 +1,18 @@
+<odoo>
+
+    <record id="action_gamesessions_view" model="ir.actions.act_window">
+        <field name="name">Game Sessions</field>
+        <field name="res_model">game.session</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <menuitem id="menu_game_sessions_root"
+              name="Game Sessions"
+              sequence="10"/>
+
+    <menuitem id="menu_game_sessions"
+              name="Partidas"
+              parent="menu_game_sessions_root"
+              action="action_game_sessions"/>
+
+</odoo>

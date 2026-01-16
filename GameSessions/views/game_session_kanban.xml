@@ -1,0 +1,50 @@
+<odoo>
+    <record id="view_game_session_kanban" model="ir.ui.view">
+        <field name="name">game.session.kanban</field>
+        <field name="model">game.session</field>
+        <field name="arch" type="xml">
+
+            <kanban class="o_kanban_small_column">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card">
+
+                            <!-- Avatar del jugador -->
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image(
+                                    'res.partner',
+                                    'avatar',
+                                    record.jugador_id.raw_value
+                                )"/>
+                            </div>
+
+                            <div class="oe_kanban_details">
+                                <strong>
+                                    <field name="jugador_id"/>
+                                </strong>
+
+                                <div>
+                                    🎮 <field name="juego"/>
+                                </div>
+
+                                <div>
+                                    🏆 Score: <field name="score"/>
+                                </div>
+
+                                <div>
+                                    📅 <field name="fecha"/>
+                                </div>
+
+                                <div>
+                                    ⚡ <field name="estado"/>
+                                </div>
+                            </div>
+
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,43 @@
+<odoo>
+
+    <!-- Vista lista -->
+    <record id="view_libro_list" model="ir.ui.view">
+        <field name="name">biblioteca.libro.list</field>
+        <field name="model">biblioteca.libro</field>
+        <field name="arch" type="xml">
+            <list string="Libros">
+                <field name="name"/>
+                <field name="autor"/>
+                <field name="fecha_publicacion"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vista formulario -->
+    <record id="view_libro_form" model="ir.ui.view">
+        <field name="name">biblioteca.libro.form</field>
+        <field name="model">biblioteca.libro</field>
+        <field name="arch" type="xml">
+            <form string="Libro">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="autor"/>
+                        <field name="fecha_publicacion"/>
+                        <field name="paginas"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_libro" model="ir.actions.act_window">
+    <field name="name">Libros</field>
+    <field name="res_model">biblioteca.libro</field>
+    <field name="view_mode">list,form</field>
+</record>
+
+<menuitem id="menu_biblioteca" name="Biblioteca"/>
+<menuitem id="menu_libros" name="Libros" parent="menu_biblioteca" action="action_libro"/>
+
+
+</odoo>
